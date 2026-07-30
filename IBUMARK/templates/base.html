@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IBUMARK Performance</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+
+<div class="container">
+
+<a class="navbar-brand" href="/">
+
+<i class="bi bi-activity"></i>
+
+IBUMARK Performance
+
+</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+    <li class="nav-item">
+        <a class="nav-link" href="/">
+            <i class="bi bi-house-door-fill"></i>
+            Inicio
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/medidas">
+            <i class="bi bi-rulers"></i>
+            Medidas
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/rutina">
+            <i class="bi bi-person-arms-up"></i>
+            Rutinas
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/ejercicios">
+            <i class="bi bi-journal-bookmark-fill"></i>
+            Biblioteca
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/progreso">
+            <i class="bi bi-graph-up-arrow"></i>
+            Progreso
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/ayuda">
+            <i class="bi bi-question-circle-fill"></i>
+            Ayuda
+        </a>
+    </li>
+
+    {% if session.get("usuario_nombre") %}
+
+    <li class="nav-item dropdown">
+
+        <a class="nav-link dropdown-toggle"
+           href="#"
+           role="button"
+           data-bs-toggle="dropdown">
+
+            <i class="bi bi-person-circle"></i>
+            {{ session["usuario_nombre"] }}
+
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+
+            <li>
+                <a class="dropdown-item text-danger" href="/logout">
+                    <i class="bi bi-box-arrow-right"></i>
+                    Cerrar sesión
+                </a>
+            </li>
+
+        </ul>
+
+    </li>
+
+    {% else %}
+
+    <li class="nav-item">
+        <a class="nav-link" href="/login">
+            <i class="bi bi-box-arrow-in-right"></i>
+            Iniciar sesión
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/registro">
+            <i class="bi bi-person-plus-fill"></i>
+            Registrarse
+        </a>
+    </li>
+
+    {% endif %}
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<div class="container mt-5">
+
+{% with messages=get_flashed_messages(with_categories=true) %}
+
+{% if messages %}
+
+{% for categoria,mensaje in messages %}
+
+<div class="alert alert-{{categoria}} alert-dismissible fade show">
+
+{{mensaje}}
+
+<button class="btn-close" data-bs-dismiss="alert"></button>
+
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+{% endwith %}
+
+{% block contenido %}
+
+{% endblock %}
+
+</div>
+
+<footer class="text-center mt-5 mb-4">
+
+<hr>
+
+<p>
+
+
+© 2026 IBUMARK Performance
+
+</p>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/atajos.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h2 class="mb-4">
+    ✏️ Editar Medidas
+</h2>
+
+<div class="card">
+
+    <div class="card-body">
+
+        <form action="/actualizar_medida/{{ dato[0] }}" method="POST">
+
+            <div class="row">
+
+                <div class="col-md-2 mb-3">
+
+                    <label>Peso</label>
+
+                    <input
+                        type="number"
+                        step="0.1"
+                        name="peso"
+                        class="form-control"
+                        value="{{ dato[1] }}"
+                        required>
+
+                </div>
+
+                <div class="col-md-2 mb-3">
+
+                    <label>Pecho</label>
+
+                    <input
+                        type="number"
+                        step="0.1"
+                        name="pecho"
+                        class="form-control"
+                        value="{{ dato[2] }}"
+                        required>
+
+                </div>
+
+                <div class="col-md-2 mb-3">
+
+                    <label>Cintura</label>
+
+                    <input
+                        type="number"
+                        step="0.1"
+                        name="cintura"
+                        class="form-control"
+                        value="{{ dato[3] }}"
+                        required>
+
+                </div>
+
+                <div class="col-md-2 mb-3">
+
+                    <label>Brazo</label>
+
+                    <input
+                        type="number"
+                        step="0.1"
+                        name="brazo"
+                        class="form-control"
+                        value="{{ dato[4] }}"
+                        required>
+
+                </div>
+
+                <div class="col-md-2 mb-3">
+
+                    <label>Pierna</label>
+
+                    <input
+                        type="number"
+                        step="0.1"
+                        name="pierna"
+                        class="form-control"
+                        value="{{ dato[5] }}"
+                        required>
+
+                </div>
+
+            </div>
+
+            <button class="btn btn-success">
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                Guardar Cambios
+
+            </button>
+
+            <a href="/medidas" class="btn btn-secondary">
+
+                Cancelar
+
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

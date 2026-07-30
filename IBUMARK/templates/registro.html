@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+
+<div class="card shadow-lg">
+
+<div class="card-body p-5">
+
+<h2 class="text-center mb-4">
+
+<i class="bi bi-person-plus-fill"></i>
+
+Crear cuenta
+
+</h2>
+
+<form action="/registrar_usuario" method="POST">
+
+<div class="mb-3">
+
+<label>Nombre completo</label>
+
+<input
+type="text"
+name="nombre"
+class="form-control"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Correo electrónico</label>
+
+<input
+type="email"
+name="correo"
+class="form-control"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Contraseña</label>
+
+<input
+type="password"
+name="password"
+class="form-control"
+required>
+
+</div>
+
+<button class="btn btn-primary w-100">
+
+Crear cuenta
+
+</button>
+
+</form>
+
+<hr>
+
+<p class="text-center">
+
+¿Ya tienes cuenta?
+
+<a href="/login">
+
+Inicia sesión
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,471 @@
+/* =====================================================
+   IBUMARK Performance
+   Estilo Profesional v2
+===================================================== */
+
+/* ==========================
+   BODY
+========================== */
+
+body{
+
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+
+    background:
+    linear-gradient(
+        rgba(245,248,255,.90),
+        rgba(230,238,255,.90)
+    ),
+    url("/static/img/fondo.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+    color:#1d2b3a;
+
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar-custom{
+
+    background:rgba(13,71,161,.92);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.18);
+
+}
+
+.navbar-brand{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+.nav-link{
+
+    color:white !important;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:#8fd3ff !important;
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    animation:fadeUp .9s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================
+   TITULOS
+========================== */
+
+.display-1{
+
+    color:#1565C0;
+
+    animation:pulse 3s infinite;
+
+}
+
+.display-4{
+
+    color:#0D47A1;
+
+    font-size:58px;
+
+    font-weight:700;
+
+    text-shadow:0 3px 15px rgba(13,71,161,.12);
+
+}
+
+.lead{
+
+    color:#5f6b78;
+
+    font-size:22px;
+
+}
+
+/* ==========================
+   ANIMACION LOGO
+========================== */
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================
+   TARJETAS
+========================== */
+
+.card{
+
+    border:none;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.40);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:all .35s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 22px 45px rgba(13,71,161,.20);
+
+}
+
+/* ==========================
+   DASHBOARD
+========================== */
+
+.dashboard-card{
+
+    animation:subir .8s ease;
+
+}
+
+.dashboard-icon{
+
+    font-size:45px;
+
+    color:#1565C0;
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(45px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================
+   ALERTA BIENVENIDA
+========================== */
+
+.dashboard-alert{
+
+    background:linear-gradient(135deg,#0D47A1,#2196F3);
+
+    color:white;
+
+    border:none;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 15px 35px rgba(13,71,161,.30);
+
+    animation:fadeUp .8s ease;
+
+}
+
+.dashboard-alert h3{
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+}
+
+.dashboard-alert p{
+
+    margin:0;
+
+    font-size:18px;
+
+    opacity:.95;
+
+}
+
+/* ==========================
+   BOTONES
+========================== */
+
+.btn{
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    background:#1565C0;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    padding:10px 22px;
+
+}
+
+.btn-primary:hover{
+
+    background:#0D47A1;
+
+    transform:translateY(-2px) scale(1.03);
+
+    box-shadow:0 8px 20px rgba(13,110,253,.30);
+
+}
+
+/* ==========================
+   INPUTS
+========================== */
+
+.form-control{
+
+    border-radius:12px;
+
+    border:1px solid #d8e4ff;
+
+    padding:12px;
+
+}
+
+.form-control:focus{
+
+    border-color:#1565C0;
+
+    box-shadow:0 0 0 .2rem rgba(21,101,192,.18);
+
+}
+
+/* ==========================
+   TABLAS
+========================== */
+
+table{
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+thead{
+
+    background:#1565C0;
+
+    color:white;
+
+}
+
+th{
+
+    padding:15px !important;
+
+}
+
+td{
+
+    padding:14px !important;
+
+}
+
+/* ==========================
+   CANVAS (GRÁFICAS)
+========================== */
+
+canvas{
+
+    padding:10px;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    color:#888;
+
+    margin-top:40px;
+
+    text-align:center;
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf4ff;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#1565C0;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#0D47A1;
+
+}
+
+/*=========================
+BIBLIOTECA
+=========================*/
+
+.ejercicio-card{
+
+    overflow:hidden;
+
+}
+
+.ejercicio-img{
+
+    height:240px;
+
+    width:100%;
+
+    object-fit:cover;
+
+    transition:.45s;
+
+}
+
+.ejercicio-card:hover .ejercicio-img{
+
+    transform:scale(1.08);
+
+}
+
+.ejercicio-card .card-body{
+
+    padding:25px;
+
+}
+
+.ejercicio-card h3{
+
+    font-weight:700;
+
+    color:#0D47A1;
+
+}
+
+.ejercicio-card p{
+
+    min-height:70px;
+
+}
+
+.badge{
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+}
+
+.ejercicio-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 50px rgba(13,71,161,.22);
+
+}

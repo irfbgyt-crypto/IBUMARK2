@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="text-center mb-5">
+
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+
+        <li class="breadcrumb-item">
+            <a href="/">Inicio</a>
+        </li>
+
+        <li class="breadcrumb-item active">
+            Rutinas
+        </li>
+
+    </ol>
+</nav>
+
+<h1>
+
+💪 Rutinas de Entrenamiento
+
+</h1>
+
+<p class="lead">
+
+Selecciona el grupo muscular que deseas entrenar.
+
+</p>
+
+</div>
+
+<div class="row">
+
+{% for grupo in grupos %}
+
+<div class="col-lg-4 col-md-6 mb-4">
+
+<div class="card h-100">
+
+<div class="card-body text-center">
+
+{% if grupo=="Pecho" %}
+
+<div class="icono">
+
+🔥
+
+</div>
+
+{% elif grupo=="Espalda" %}
+
+<div class="icono">
+
+🏋
+
+</div>
+
+{% elif grupo=="Pierna" %}
+
+<div class="icono">
+
+🦵
+
+</div>
+
+{% elif grupo=="Hombro" %}
+
+<div class="icono">
+
+💪
+
+</div>
+
+{% elif grupo=="Biceps" %}
+
+<div class="icono">
+
+💥
+
+</div>
+
+{% elif grupo=="Triceps" %}
+
+<div class="icono">
+
+⚡
+
+</div>
+
+{% else %}
+
+<div class="icono">
+
+🧱
+
+</div>
+
+{% endif %}
+
+<h3>
+
+{{ grupo }}
+
+</h3>
+
+<p>
+
+Rutina especializada para {{ grupo.lower() }}
+
+</p>
+
+<a
+
+href="/rutina/{{ grupo }}"
+
+class="btn btn-primary">
+
+Ver rutina
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

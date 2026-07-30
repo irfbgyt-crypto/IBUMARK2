@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">
+            <i class="bi bi-house-fill"></i> Inicio
+        </li>
+    </ol>
+</nav>
+
+<!-- ===========================
+        ENCABEZADO
+=========================== -->
+
+<div class="text-center mb-5 hero">
+
+    <i class="bi bi-activity display-1 text-primary"></i>
+
+    <div class="alert alert-primary dashboard-alert mb-5">
+
+    {{ saludo }}, {{ usuario }} 👋
+
+    <p class="mb-0">
+
+        Hoy es {{ fecha_actual }}
+
+    </p>
+
+</div>
+
+    <h1 class="display-4 fw-bold">
+        IBUMARK Performance
+    </h1>
+
+    <p class="lead">
+        Entrena inteligente. Registra tu progreso. Alcanza tus objetivos.
+    </p>
+
+</div>
+
+<!-- ===========================
+        DASHBOARD
+=========================== -->
+
+<div class="row mb-5">
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card dashboard-card">
+
+            <div class="card-body text-center">
+
+                <i class="bi bi-speedometer2 dashboard-icon"></i>
+
+                <h6 class="mt-3">
+                    Peso actual
+                </h6>
+
+                <h2>
+                    {{ peso }}
+                </h2>
+
+                <small>kg</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card dashboard-card">
+
+            <div class="card-body text-center">
+
+                <i class="bi bi-calendar-check dashboard-icon"></i>
+
+                <h6 class="mt-3">
+                    Último registro
+                </h6>
+
+                <h5>
+                    {{ fecha }}
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card dashboard-card">
+
+            <div class="card-body text-center">
+
+                <i class="bi bi-lightning-charge dashboard-icon"></i>
+
+                <h6 class="mt-3">
+                    Rutinas
+                </h6>
+
+                <h2>
+                    {{ total_rutinas }}
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card dashboard-card">
+
+            <div class="card-body text-center">
+
+                <i class="bi bi-book-half dashboard-icon"></i>
+
+                <h6 class="mt-3">
+                    Ejercicios
+                </h6>
+
+                <h2>
+                    {{ total_ejercicios }}
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+        OPCIONES
+=========================== -->
+
+<div class="row g-4">
+
+    <!-- Medidas -->
+
+    <div class="col-lg-3">
+
+        <div class="card text-center h-100">
+
+            <div class="card-body">
+
+                <i class="bi bi-rulers display-4 text-primary"></i>
+
+                <h4 class="mt-3">
+                    Registrar Medidas
+                </h4>
+
+                <p>
+                    Guarda peso y medidas corporales.
+                </p>
+
+                <a href="/medidas" class="btn btn-primary w-100">
+                    Entrar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Rutinas -->
+
+    <div class="col-lg-3">
+
+        <div class="card text-center h-100">
+
+            <div class="card-body">
+
+                <i class="bi bi-person-arms-up display-4 text-primary"></i>
+
+                <h4 class="mt-3">
+                    Rutinas
+                </h4>
+
+                <p>
+                    Selecciona el músculo que entrenarás.
+                </p>
+
+                <a href="/rutina" class="btn btn-primary w-100">
+                    Entrar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Biblioteca -->
+
+    <div class="col-lg-3">
+
+        <div class="card text-center h-100">
+
+            <div class="card-body">
+
+                <i class="bi bi-journal-bookmark-fill display-4 text-primary"></i>
+
+                <h4 class="mt-3">
+                    Biblioteca
+                </h4>
+
+                <p>
+                    Consulta ejercicios y aprende su ejecución.
+                </p>
+
+                <a href="/ejercicios" class="btn btn-primary w-100">
+                    Entrar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Progreso -->
+
+    <div class="col-lg-3">
+
+        <div class="card text-center h-100">
+
+            <div class="card-body">
+
+                <i class="bi bi-graph-up-arrow display-4 text-primary"></i>
+
+                <h4 class="mt-3">
+                    Mi Progreso
+                </h4>
+
+                <p>
+                    Visualiza tus avances físicos.
+                </p>
+
+                <a href="/progreso" class="btn btn-primary w-100">
+                    Entrar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

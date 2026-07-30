@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="text-center mb-5">
+
+    <h1>
+        💪 Rutina de {{ grupo }}
+    </h1>
+
+    <p class="lead">
+        Completa todos los ejercicios con buena técnica.
+    </p>
+
+</div>
+
+<div class="row">
+
+{% for ejercicio in ejercicios %}
+
+<div class="col-lg-6 mb-4">
+
+<div class="card h-100">
+
+<div class="card-body">
+
+<h3>
+
+🏋 {{ ejercicio[0] }}
+
+</h3>
+
+<hr>
+
+<p>
+
+<b>Series:</b>
+
+{{ ejercicio[1] }}
+
+</p>
+
+<p>
+
+<b>Repeticiones:</b>
+
+{{ ejercicio[2] }}
+
+</p>
+
+<button
+class="btn btn-success w-100 btn-realizado"
+onclick="marcarRealizado(this)">
+
+    ✔ Marcar como realizado
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<div class="text-center mt-4">
+
+<a href="/rutina" class="btn btn-primary">
+
+← Volver
+
+</a>
+
+</div>
+
+<script>
+
+function marcarRealizado(boton){
+
+    boton.innerHTML="✔ Completado";
+
+    boton.classList.remove("btn-success");
+
+    boton.classList.add("btn-secondary");
+
+    boton.disabled=true;
+
+}
+
+</script>
+
+{% endblock %}

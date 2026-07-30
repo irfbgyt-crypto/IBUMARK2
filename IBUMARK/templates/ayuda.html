@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+
+        <li class="breadcrumb-item">
+            <a href="/">Inicio</a>
+        </li>
+
+        <li class="breadcrumb-item active">
+            Ayuda
+        </li>
+
+    </ol>
+</nav>
+
+<div class="text-center mb-5">
+
+    <i class="bi bi-question-circle-fill display-1 text-primary"></i>
+
+    <h1 class="display-4">
+        Centro de Ayuda
+    </h1>
+
+    <p class="lead">
+        Consulta los errores más comunes y cómo solucionarlos.
+    </p>
+
+</div>
+
+<div class="accordion" id="acordeonAyuda">
+
+    <!-- Error 1 -->
+
+    <div class="accordion-item">
+
+        <h2 class="accordion-header">
+
+            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#error1">
+
+                ❌ No hay datos para mostrar
+
+            </button>
+
+        </h2>
+
+        <div id="error1" class="accordion-collapse collapse show">
+
+            <div class="accordion-body">
+
+                Si las gráficas aparecen vacías o no existen registros, primero dirígete a
+                <strong>Registrar Medidas</strong> y guarda al menos una medición corporal.
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Error 2 -->
+
+    <div class="accordion-item">
+
+        <h2 class="accordion-header">
+
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#error2">
+
+                ⚠ Error al cargar una imagen
+
+            </button>
+
+        </h2>
+
+        <div id="error2" class="accordion-collapse collapse">
+
+            <div class="accordion-body">
+
+                Comprueba que la imagen exista dentro de la carpeta
+                <strong>static/img/ejercicios</strong>
+                y que el nombre coincida exactamente con el registrado.
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Error 3 -->
+
+    <div class="accordion-item">
+
+        <h2 class="accordion-header">
+
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#error3">
+
+                📊 La gráfica no se actualiza
+
+            </button>
+
+        </h2>
+
+        <div id="error3" class="accordion-collapse collapse">
+
+            <div class="accordion-body">
+
+                Verifica que hayas registrado nuevas medidas y actualiza la página con
+                <strong>F5</strong>.
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Error 4 -->
+
+    <div class="accordion-item">
+
+        <h2 class="accordion-header">
+
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#error4">
+
+                📝 No puedo guardar una medición
+
+            </button>
+
+        </h2>
+
+        <div id="error4" class="accordion-collapse collapse">
+
+            <div class="accordion-body">
+
+                Asegúrate de completar todos los campos numéricos antes de presionar
+                <strong>Guardar</strong>.
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Error 5 -->
+
+    <div class="accordion-item">
+
+        <h2 class="accordion-header">
+
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#error5">
+
+                💪 No aparece una rutina
+
+            </button>
+
+        </h2>
+
+        <div id="error5" class="accordion-collapse collapse">
+
+            <div class="accordion-body">
+
+                Comprueba que seleccionaste correctamente el grupo muscular y vuelve a intentarlo.
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Error 6 -->
+
+    <div class="accordion-item">
+
+        <h2 class="accordion-header">
+
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#error6">
+
+                🌐 Error de conexión
+
+            </button>
+
+        </h2>
+
+        <div id="error6" class="accordion-collapse collapse">
+
+            <div class="accordion-body">
+
+                Si la aplicación no responde, verifica que el servidor Flask esté en ejecución y vuelve a cargar la página.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="alert alert-primary mt-5 text-center">
+
+    <h4>
+
+        <i class="bi bi-lightbulb-fill"></i>
+
+        Recomendación
+
+    </h4>
+
+    Mantén actualizada la información registrada para obtener estadísticas y gráficas más precisas.
+
+</div>
+
+<hr class="my-5">
+
+<div class="card shadow-lg border-0">
+
+    <div class="card-body">
+
+        <h2 class="text-primary mb-4">
+            <i class="bi bi-keyboard-fill"></i>
+            Atajos de teclado
+        </h2>
+
+        <p class="text-muted">
+            Utiliza los siguientes atajos para navegar rápidamente por el sistema.
+        </p>
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-primary">
+
+                    <tr>
+                        <th>Atajo</th>
+                        <th>Función</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td><kbd>Ctrl</kbd> + <kbd>1</kbd></td>
+                        <td>Ir a Inicio.</td>
+                    </tr>
+
+                    <tr>
+                        <td><kbd>Ctrl</kbd> + <kbd>2</kbd></td>
+                        <td>Abrir Registrar Medidas.</td>
+                    </tr>
+
+                    <tr>
+                        <td><kbd>Ctrl</kbd> + <kbd>3</kbd></td>
+                        <td>Abrir Rutinas.</td>
+                    </tr>
+
+                    <tr>
+                        <td><kbd>Ctrl</kbd> + <kbd>4</kbd></td>
+                        <td>Abrir Biblioteca de Ejercicios.</td>
+                    </tr>
+
+                    <tr>
+                        <td><kbd>Ctrl</kbd> + <kbd>5</kbd></td>
+                        <td>Ir a Mi Progreso.</td>
+                    </tr>
+
+                    <tr>
+                        <td><kbd>Ctrl</kbd> + <kbd>6</kbd></td>
+                        <td>Abrir Ayuda.</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

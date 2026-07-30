@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+
+        <li class="breadcrumb-item">
+            <a href="/">Inicio</a>
+        </li>
+
+        <li class="breadcrumb-item">
+            <a href="/ejercicios">Biblioteca</a>
+        </li>
+
+        <li class="breadcrumb-item active">
+            {{ ejercicio.nombre }}
+        </li>
+
+    </ol>
+</nav>
+
+<div class="container">
+
+    <div class="card shadow-lg border-0">
+
+      <img src="{{ url_for('static', filename='img/ejercicios/' ~ ejercicio.imagen) }}"
+     class="card-img-top"
+     style="height:420px; object-fit:cover;"
+     alt="{{ ejercicio.nombre }}">
+
+        <div class="card-body p-5">
+
+            <span class="badge bg-primary fs-6 mb-3">
+
+                {{ ejercicio.grupo }}
+
+            </span>
+
+            <h1 class="display-4 fw-bold">
+
+                {{ ejercicio.nombre }}
+
+            </h1>
+
+            <hr>
+
+            <h3>
+
+                📖 Descripción
+
+            </h3>
+
+            <p class="lead">
+
+                {{ ejercicio.descripcion }}
+
+            </p>
+
+            <br>
+
+            <h3>
+
+                💪 Músculos trabajados
+
+            </h3>
+
+            <div class="mb-4">
+
+                {% for m in ejercicio.musculos %}
+
+                <span class="badge bg-success p-2 me-2 mb-2">
+
+                    {{ m }}
+
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+            <h3>
+
+                ✅ Consejos
+
+            </h3>
+
+            <ul class="list-group mb-4">
+
+                {% for c in ejercicio.consejos %}
+
+                <li class="list-group-item">
+
+                    ✔ {{ c }}
+
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+            <h3>
+
+                ❌ Errores comunes
+
+            </h3>
+
+            <ul class="list-group mb-4">
+
+                {% for e in ejercicio.errores %}
+
+                <li class="list-group-item text-danger">
+
+                    ✘ {{ e }}
+
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+            <div class="d-grid gap-3">
+
+                <a href="{{ ejercicio.video }}"
+
+                   target="_blank"
+
+                   class="btn btn-danger btn-lg">
+
+                    <i class="bi bi-youtube"></i>
+
+                    Ver video del ejercicio
+
+                </a>
+
+                <a href="/ejercicios"
+
+                   class="btn btn-outline-primary btn-lg">
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Regresar a la biblioteca
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
